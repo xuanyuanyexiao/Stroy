@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小说阅读器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            padding: 15px;
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .chapter-title {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .content {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        .chapter-select {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .chapter-select select {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function loadChapter(chapterContent) {
+            document.getElementById('chapter-content').innerHTML = chapterContent;
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>小说阅读器</h1>
+</header>
+
+<div class="container">
+    <div class="chapter-select">
+        <label for="chapters">选择章节:</label>
+        <select id="chapters" onchange="loadChapter(this.value)">
+            <option value="">--请选择章节--</option>
+            <option value="<h2 class='chapter-title'>第一卷 第一章</h2><div class='content'>这是第一章的内容...</div>">第一卷 第一章</option>
+            <option value="<h2 class='chapter-title'>第一卷 第二章</h2><div class='content'>这是第二章的内容...</div>">第一卷 第二章</option>
+            <option value="<h2 class='chapter-title'>第二卷 第一章</h2><div class='content'>这是第三章的内容...</div>">第二卷 第一章</option>
+            <option value="<h2 class='chapter-title'>第二卷 第二章</h2><div class='content'>这是第四章的内容...</div>">第二卷 第二章</option>
+        </select>
+    </div>
+    
+    <div id="chapter-content">
+        <p>请从上面的下拉框选择章节以开始阅读。</p>
+    </div>
+</div>
+
+</body>
+</html>
